@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  background-color: #f9f9f9;
+}
+
+#tabs-container {
+  display: flex; /* 子要素（タブ）を横に並べる */
+  flex-direction: row; /* 水平方向に並べる */
+  align-items: center; /* 子要素を縦方向に中央揃え */
+  overflow-x: auto; /* 横スクロールを有効にする */
+  white-space: nowrap; /* タブを改行せず横に並べる */
+  padding: 5px; /* 内側の余白 */
+  border-bottom: 1px solid #ccc; /* 下部のボーダー */
+  width: 100%; /* 親要素の幅を100%に設定 */
+  flex-shrink: 0; /* 親要素の影響で縮小されないようにする */
+}
+
+#tabs {
+  display: flex; /* 子要素（タブボタン）を横に並べる */
+  flex-direction: row; /* 水平方向に並べる */
+  align-items: center; /* 縦方向に中央揃え */
+  padding: 5px; /* 内側の余白 */
+}
+
+#tabs button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  background-color: #fff;
+  color: #007bff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#tabs button.active {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+#add-tab-button {
+  background-color: #009e28 !important;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+/* タブ全体のボタン */
+.tab-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background: white; /* 非active時の背景色 */
+  color: black; /* 非active時の文字色 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* active状態のタブ */
+.tab-button.active {
+  background: #007bff; /* active時の背景色 */
+  color: white; /* active時の文字色 */
+  border: 1px solid #0056b3; /* active時の境界線色 */
+}
+
+/* タブ内の名前部分 */
+.tab-button span {
+  margin-right: 5px;
+}
+
+.tab-button:hover {
+  transform: translateY(-2px); /* 上に少し浮かせる効果 */
+}
+.tab-button:active {
+  transform: translateY(2px); /* クリック時に少し下に押し込む */
+}
+
+/* 削除ボタン */
+.delete-tab-button {
+  background: rgb(250, 80, 80) !important; /* 常に赤 */
+  color: white !important; /* 常に白文字 */
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 削除ボタンのホバー状態 */
+.delete-tab-button:hover {
+  background: darkred; /* ホバー時に濃い赤 */
+}
+
+#content-area {
+  width: 90%; /* 幅を固定 */
+  height: 300px; /* 高さを固定 */
+  resize: none; /* ユーザーによるリサイズを無効化 */
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  overflow-y: auto; /* 内容が溢れた場合にスクロールバーを表示 */
+  margin: 10px auto; /* 上下に10px、中央揃え */
+  flex-shrink: 0; /* 親要素に合わせて縮小しないように設定 */
+}
+
+#add-url {
+  background-color: #17a2b8;
+}
+
+#link-text {
+  justify-content: center;
+}
+
+/* リンクリストを横並びにする */
+#links-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* リンクを中央揃え */
+  flex-wrap: wrap; /* リンクがリストからはみ出さないように折り返しを許可 */
+  margin-bottom: 15px;
+}
+
+/* リンクアイコンとリンクを横並びにする */
+.link-container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px; /* 各リンクの間隔を調整 */
+}
+
+.link-icon {
+  width: 16px; /* アイコンのサイズ調整 */
+  height: 16px;
+  margin-right: 5px; /* アイコンとテキストの間隔 */
+}
+
+.active {
+  background-color: #007bff; /* 好きな色 */
+  color: white;
+  font-weight: bold;
+  border: 1px solid #0056b3; /* 好きな境界線色 */
+}
+
+/* ボタンの横並び配置 */
+#button-container {
+  display: flex; /* 横並びにする */
+  justify-content: flex-start; /* 左揃え */
+  gap: 10px; /* ボタン間の間隔 */
+  margin-bottom: 10px; /* ボタンと下のコンテンツの間にスペース */
+}
+
+/* ボタンのスタイル */
+.styled-button {
+  background-color: #4caf50; /* 緑色の背景 */
+  color: white; /* 白い文字 */
+  font-size: 16px; /* 文字サイズ */
+  padding: 10px 20px; /* 内側の余白 */
+  border: none; /* 枠線なし */
+  border-radius: 5px; /* 丸みを帯びた角 */
+  cursor: pointer; /* ポインタカーソル */
+  transition: background-color 0.3s, transform 0.2s ease; /* 背景色とアニメーション */
+  height: 40px; /* ボタンの高さ */
+  width: 180px;
+  flex: 1; /* ボタンの横幅を均等にする */
+}
+
+/* ホバー時のスタイル */
+button:hover {
+  transform: translateY(-2px); /* 上に少し浮かせる効果 */
+}
+
+/* フォーカス時のスタイル */
+.styled-button:focus {
+  outline: none; /* フォーカスリングを消す */
+  box-shadow: 0 0 10px rgba(72, 128, 255, 0.8); /* 青いハイライト */
+}
+
+/* ボタンがクリックされた時 */
+button:active {
+  transform: translateY(2px); /* クリック時に少し下に押し込む */
+}

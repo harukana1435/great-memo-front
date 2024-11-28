@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grt memo</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="tabs-container">
+      <div id="tabs">
+        <!-- タブボタンが追加されるエリア -->
+      </div>
+      <button id="add-tab-button">+</button>
+    </div>
+    <textarea id="content-area" placeholder="メモを入力..."></textarea>
+    <!-- Notionに書き込みボタン -->
+    <div id="button-container">
+      <button id="add-url" class="styled-button">現在のURLを追加</button>
+      <button id="write-to-notion" class="styled-button">
+        Notionに書き込み
+      </button>
+    </div>
+    <h3 id="link-text">リンク一覧:</h3>
+    <ul id="links-list">
+      <!-- リンクリストがここに追加される -->
+    </ul>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
